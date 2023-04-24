@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="chap02.AppContext"/>
     <fullyQualifiedTypeName name="reflection.MyClass"/>
     <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-    <fullyQualifiedTypeName name="spring.MemberDao"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="spring.DuplicateMemberException"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
@@ -13,11 +12,14 @@
     <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
     <fullyQualifiedTypeName name="config.AppCtx"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-    <fullyQualifiedTypeName name="spring.MemberRegisterService"/>
     <fullyQualifiedTypeName name="spring.RegisterRequest"/>
-    <fullyQualifiedTypeName name="spring.ChangePasswordService"/>
     <fullyQualifiedTypeName name="spring.MemberNotFoundException"/>
     <fullyQualifiedTypeName name="spring.WrongIdPasswordException"/>
+    <fullyQualifiedTypeName name="spring.MemberDao"/>
     <fullyQualifiedTypeName name="spring.MemberPrinter"/>
+    <fullyQualifiedTypeName name="spring.MemberRegisterService"/>
+    <fullyQualifiedTypeName name="spring.ChangePasswordService"/>
     <fullyQualifiedTypeName name="spring.MemberListPrinter"/>
+    <fullyQualifiedTypeName name="spring.MemberInfoPrinter"/>
+    <fullyQualifiedTypeName name="spring.VersionPrinter"/>
 </qualifiedTypeNameHistroy>

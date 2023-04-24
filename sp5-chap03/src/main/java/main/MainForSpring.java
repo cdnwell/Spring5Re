@@ -9,10 +9,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import config.AppCtx;
 import spring.ChangePasswordService;
+import spring.MemberInfoPrinter;
 import spring.MemberListPrinter;
 import spring.MemberNotFoundException;
 import spring.MemberRegisterService;
 import spring.RegisterRequest;
+import spring.VersionPrinter;
 
 public class MainForSpring {
 
@@ -38,11 +40,31 @@ public class MainForSpring {
 			} else if (command.equals("list")) {
 				processListCommand();
 				continue;
+			} else if (command.startsWith("info ")) {
+				processInfoCommand(command.split(" "));
+				continue;
+			} else if (command.equals("version" )) {
+				processVersionCommand();
+				continue;
 			}
 			printHelp();
 		}
 	}
 	
+	private static void processVersionCommand() {
+		VersionPrinter versionPrinter = ctx.getBean("versionPrinter", VersionPrinter.class);
+		versionPrinter.print();
+	}
+
+	private static void processInfoCommand(String[] arg) {
+		if (arg.length != 2) {
+			printHelp();
+			return;
+		}
+		MemberInfoPrinter infoPrinter = ctx.getBean("infoPrinter", MemberInfoPrinter.class);
+		infoPrinter.printeMemberInfo(arg[1]);
+	}
+
 	private static void processListCommand() {
 		MemberListPrinter listPrinter = ctx.getBean("listPrinter", MemberListPrinter.class);
 	}
@@ -81,6 +103,15 @@ public class MainForSpring {
 		} catch (IdPasswordNotMatchingException e) {
 			System.out.println("이메일과 암호가 일치하지 않습니다.\n");
 		}
+	}
+	
+	private static void printHelp() {
+		System.out.println();
+		System.out.println("잘못된 명령입니다. 아래 명령어 사용법을 확인하세요.");
+		System.out.println("명령어 사용법 : ");
+		System.out.println("new 이메일 이름 암호 암호확인");
+		System.out.println("change 이메일 현재비번 변경비번");
+		System.out.println();
 	}
 	
 }
